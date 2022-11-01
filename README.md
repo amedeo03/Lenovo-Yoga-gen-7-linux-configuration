@@ -28,6 +28,8 @@ what works:
 - ports and connectivity (wifi, bt etc).
 
 what does not work:
+- even by setting the screen scale to 200%, icons in menus are tiny af;
+- blur on window decorations will flicker a lot. I suggest disabling blur altogether;
 - folding the screen will actually disable the keyboard, but folding it back will not reactivate it;
 - sleeping the pc by closing the lid will make KDE crash: if you reopen it you will get a black screen with just the mouse cursor;
 - for some reason when manually putting the pc to sleep, you won't be able to log back in since it won't recognize your password (strange huh);
@@ -36,4 +38,3 @@ what does not work:
 Apps/functionality I'm looking for:
 - a decent on-screen keyboard;
 - a onenote-like program (compiling Joplin from the aur gives an error while working on python 2);
-
