@@ -5,7 +5,8 @@ Assorted tips and tricks to get a decent Arch installation on your Lenovo Yoga 7
 Both evernote and onenote AUR packages aren't natives and the input lag is too much for my tastes. Joplin currently doesn't support pen input.
 If you have an alternative you would suggest, I will be very happy to try it out
 
-
+# original readme
+---------------------------------
 List of my specs:
 amd ryzen 7 6800u (with amd radeon 680m)
 16 GBs ddr5 ram
