@@ -1,5 +1,10 @@
-# Lenovo-Yoga-gen-7-linux-configuration
-Assorted tips and tricks to get a decent Arch installation on your Lenovo Yoga 7 Gen 7
+# Yoga 7 gen 7 linux configuration for university
+Assorted tips and tricks to get a decent Arch installation on your Lenovo Yoga 7 Gen 7 and do your homework with it
+
+# This little wiki is discontinued at least for now, since I couldn't find a decent alternative to onenote on linux.
+Both evernote and onenote AUR packages aren't natives and the input lag is too much for my tastes. Joplin currently doesn't support pen input.
+If you have an alternative you would suggest, I will be very happy to try it out
+
 
 List of my specs:
 amd ryzen 7 6800u (with amd radeon 680m)
@@ -37,4 +42,4 @@ what does not work:
 
 Apps/functionality I'm looking for:
 - a decent on-screen keyboard;
-- a onenote-like program (compiling Joplin from the aur gives an error while working on python 2);
+- a onenote-like program;
