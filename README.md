@@ -1,4 +1,4 @@
-# Yoga 7 gen 7 linux configuration for university
+# Yoga 7 gen 7 linux configuration and trouble shooting
 Assorted tips and tricks to get a decent Arch installation on your Lenovo Yoga 7 Gen 7 and do your homework with it
 
 Hello everyone, I bought this laptop to use it during my university studies: it has nice specs, long battery life and I can take notes with the stylus. As soon as I got it, I started thinkering with linux, installing Arch since it's usually my go-to distro.
