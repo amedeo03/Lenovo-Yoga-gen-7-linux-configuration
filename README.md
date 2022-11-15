@@ -1,13 +1,11 @@
 # Yoga 7 gen 7 linux configuration and trouble shooting
-Assorted tips and tricks to get a decent Arch installation on your Lenovo Yoga 7 Gen 7 and do your homework with it
 
 Hello everyone, I bought this laptop to use it during my university studies: it has nice specs, long battery life and I can take notes with the stylus. As soon as I got it, I started thinkering with linux, installing Arch since it's usually my go-to distro.
 
 My specs
 ---------------------------------
-List of my specs:
 amd ryzen 7 6800u
-16 GBs ddr5 ram
+16 Gbs ddr5 ram
 512 nvme ssd
 14" 90 Hz amoled screen
 
@@ -25,9 +23,9 @@ what works:
 - almost every shortcut button (including volume and brightness keys) and keyboard backlight;
 - resolution and refresh rate are automatically recognized by KDE;
 - ports (not fully tested) and connectivity (wifi, bt etc);
-- great battery life even without manual optimizations.
+- great battery life even without manual optimizations (greatly improvable thanks to TLP).
 
-what does not work:
+what does not work (out of the box):
 1) folding the screen will actually disable the keyboard, but folding it back will not reactivate it;
 2) some bluetooth might not connect due to an unsupported protocol
 3) sleeping the pc by closing the lid will make KDE crash: if you reopen it you will get a black screen with just the mouse cursor;
@@ -38,9 +36,9 @@ Solutions I found:
 - regarding the screen folding, by installing iio-sensor-proxy and kded-rotation-git you will get both automatic screen rotation and keyboard deactivation while in tablet mode without further configuration (took from https://wiki.archlinux.org/title/Tablet_PC);
 - you can fix the unsupported protocol by installing pulseaudio-bluetooth and then rebooting
 - for the sleep problem, for now I just set the screen to turn of instead of going to sleep directly from the plasma settings gui;
-note: a lot of those were found thanks to this specific article in the Arch Wiki: https://wiki.archlinux.org/title/Tablet_PC
+- in order to get even better battery life I decided to install and manually configure TLP (https://linrunner.de/tlp/index.html). I will post my configuration with the parameters I changed from the default one (stuff like disabling cpu boost in battery mode etc).
 
-Alternatives I found for windows programs:
+Alternatives I found for windows programs/general utilities:
 - As a note app, I'm currently using xournall++ (xournalpp in the official arch repo). Although the workflow is radically different from OneNote, I'm still thinkering on it, it has good functionality and it is highly customizable;
 - For pdf reader I use both okular and xournal++ since it can open and sketch on them;
 - corekeyboard (from AUR) as my on-screen keyboard. While it might not be as convenient as the windows' one, it still does a decent job.
