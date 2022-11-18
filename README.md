@@ -44,6 +44,12 @@ This is quite a weird issue and it takes a complete reboot afaik to fix it. Logs
 wacom xxxx:xxxx:xxxx.xxxx: wacom_idleprox_timeout: tool appears to be hung in-prox. forcing it out.
 ```
 
+A temporary fix I found is a scripts that restart the wacom module (USE AT YOUR OWN RISK, ALWAYS CHECK CODE THAT IS BEING EXECUTED ON YOUR MACHINE). I then created an alias in .bash.rc to have it as a quick command I can run on the go:
+
+```
+alias rewacom = 'bash ~/.scripts_wacom_restart.sh'
+```
+
 ##### 5. Sometimes (I haven't been able to recreate the conditions) when switching to another tty you will either a blank page or an error about a corruption in the filesystem
 Still need to look into that.
 
