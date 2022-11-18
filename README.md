@@ -29,7 +29,7 @@ My installation included:
 
 ## Issues and fixes:
 ##### 1. Folding the screen will actually disable the keyboard, but folding it back will not reactivate it
-By installing iio-sensor-proxy and kded-rotation-git^AUR^ you will get both automatic screen rotation and keyboard deactivation while in tablet mode without further configuration (took from https://wiki.archlinux.org/title/Tablet_PC).
+By installing iio-sensor-proxy and kded-rotation-git [AUR] you will get both automatic screen rotation and keyboard deactivation while in tablet mode without further configuration (took from https://wiki.archlinux.org/title/Tablet_PC).
 
 ##### 2. Some bluetooth might not connect due to an unsupported protocol
 Install pulseaudio-bluetooth and then reboot.
@@ -61,7 +61,7 @@ As a note app, I'm currently using xournallpp. Although the workflow is radicall
 - Preferences > touchscreen > enable "hand recognition": will prevent a lot of misthouches done with your hands;
 - Preferences > view > scrollbars > hide vertical scrollbar: the most usefull of them all, will prevent touching the scrollbar with your and and getting teleported to the last page of your notes.
 
-##### 2. Corekeyboard^AUR^
+##### 2. Corekeyboard [AUR]
 A decent enough on-screen keyboard, I wish we could edit the height, but it gets the job done.
 
 This is it for my little experiment, I hope this helped you.
