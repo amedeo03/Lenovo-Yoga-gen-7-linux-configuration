@@ -6,10 +6,10 @@ Hello everyone, I bought this laptop to use it during my university studies: it 
 
 ---------------------------------
 
-AMD ryzen 7 6800u
-16 Gbs ddr5 ram
-512 nvme ssd
-14" 90 Hz amoled screen
+- AMD ryzen 7 6800u
+- 16 Gbs ddr5 ram
+- 512 nvme ssd
+- 14" 90 Hz amoled screen
 
 ## Installation process
 The installation process was a breeze using the latest archiso image (2022.11.01 release). The only thing you need to account for is that the wifi card is locked by default. Unlock it with "rfkill unblock wifi"
