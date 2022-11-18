@@ -2,14 +2,16 @@
 
 Hello everyone, I bought this laptop to use it during my university studies: it has nice specs, long battery life and I can take notes with the stylus. As soon as I got it, I started thinkering with linux, installing Arch since it's usually my go-to distro.
 
-My specs
+## My specs
+
 ---------------------------------
-amd ryzen 7 6800u
+
+AMD ryzen 7 6800u
 16 Gbs ddr5 ram
 512 nvme ssd
 14" 90 Hz amoled screen
 
-# Installation process
+## Installation process
 The installation process was a breeze using the latest archiso image (2022.11.01 release). The only thing you need to account for is that the wifi card is locked by default. Unlock it with "rfkill unblock wifi"
 
 My installation included:
@@ -18,34 +20,48 @@ My installation included:
 - xf86-video-amdgpu and mesa as graphic drivers;
 - KDE plasma.
 
-what works:
+## What works:
 - touchscreen, pen, trackpad;
 - almost every shortcut button (including volume and brightness keys) and keyboard backlight;
 - resolution and refresh rate are automatically recognized by KDE;
 - ports (not fully tested) and connectivity (wifi, bt etc);
 - great battery life even without manual optimizations (greatly improvable thanks to TLP).
 
-what does not work (out of the box):
-1) folding the screen will actually disable the keyboard, but folding it back will not reactivate it;
-2) some bluetooth might not connect due to an unsupported protocol
-3) sleeping the pc by closing the lid will make KDE crash: if you reopen it you will get a black screen with just the mouse cursor;
-4) occasionally the touchscreen and pen input will stop working altogether. I don't know how to recreate the issue, still need to look into the logs.
-5) sometimes (I haven't been able to recreate the conditions) when switching to another tty you will either a blank page or an error about a corruption in the filesystem
+## Issues and fixes:
+##### 1. Folding the screen will actually disable the keyboard, but folding it back will not reactivate it
+By installing iio-sensor-proxy and kded-rotation-git^AUR^ you will get both automatic screen rotation and keyboard deactivation while in tablet mode without further configuration (took from https://wiki.archlinux.org/title/Tablet_PC).
 
-Solutions I found:
-- regarding the screen folding, by installing iio-sensor-proxy and kded-rotation-git you will get both automatic screen rotation and keyboard deactivation while in tablet mode without further configuration (took from https://wiki.archlinux.org/title/Tablet_PC);
-- you can fix the unsupported protocol by installing pulseaudio-bluetooth and then rebooting
-- for the sleep problem, for now I just set the screen to turn of instead of going to sleep directly from the plasma settings gui;
-- in order to get even better battery life I decided to install and manually configure TLP (https://linrunner.de/tlp/index.html). I will post my configuration with the parameters I changed from the default one (stuff like disabling cpu boost in battery mode etc).
+##### 2. Some bluetooth might not connect due to an unsupported protocol
+Install pulseaudio-bluetooth and then reboot.
 
-Alternatives I found for windows programs/general utilities:
-- As a note app, I'm currently using xournall++ (xournalpp in the official arch repo). Although the workflow is radically different from OneNote, I'm still thinkering on it, it has good functionality and it is highly customizable;
-- For pdf reader I use both okular and xournal++ since it can open and sketch on them;
-- corekeyboard (from AUR) as my on-screen keyboard. While it might not be as convenient as the windows' one, it still does a decent job.
-- dropbox as a cloud client (my uni offers a premium plan to students for free);
+##### 3. Sleeping the pc by closing the lid will make KDE crash: if you reopen it you will get a black screen with just the mouse cursor
+I tested this also with gnome and I had even more problems. For a temporary fix, I decided to turn off the screen without putting the computer to sleep. You will miss out on battery duration, but it works well enough until I find a fix.
 
-# to-dos:
-- sleep issue
-- tty switch issues
+##### 4. Occasionally the touchscreen and pen input will stop working altogether.
+This is quite a weird issue and it takes a complete reboot afaik to fix it. Logs from journal return this:
 
-And here the document will end. I hope this helped you, see you!
+```
+wacom xxxx:xxxx:xxxx.xxxx: wacom_idleprox_timeout: tool appears to be hung in-prox. forcing it out.
+```
+
+##### 5. Sometimes (I haven't been able to recreate the conditions) when switching to another tty you will either a blank page or an error about a corruption in the filesystem
+Still need to look into that.
+
+##### 6. Only front speakers are recognised by the system
+Since speakers are not my priority, This is the last issue I'll try fixing, just keep in mind they are pretty bad to listen to as they are out of the box.
+
+## Other tweaks
+##### 1. Better battery with TLP and other utilities
+I included in the repo my TLP config file. Thanks to some tweaks (disabling clock boost with battery, changing governor) I got a battery life very similar (if not superior) to the one I was getting on windows 11, with some added benefits such as a quieter fans and colder temperatures. Moreover, I decided to set the refresh rate to 60 Hz instead of 90, this should improve battery life even more.
+
+## General utilities for the laptop:
+##### 1. Xournalpp
+As a note app, I'm currently using xournallpp. Although the workflow is radically different from OneNote, I'm loving it for the extreme customization it can offer. If you are using this notebook to take notes with a stylus, I'd suggest changing a few settings to get an even better experience:
+- View > Toolbar > Right Hand Note Taking: will apply a much more friendly layout to take notes;
+- Preferences > touchscreen > enable "hand recognition": will prevent a lot of misthouches done with your hands;
+- Preferences > view > scrollbars > hide vertical scrollbar: the most usefull of them all, will prevent touching the scrollbar with your and and getting teleported to the last page of your notes.
+
+##### 2. Corekeyboard^AUR^
+A decent enough on-screen keyboard, I wish we could edit the height, but it gets the job done.
+
+This is it for my little experiment, I hope this helped you.
