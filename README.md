@@ -38,16 +38,10 @@ Install pulseaudio-bluetooth and then reboot.
 I tested this also with gnome and I had even more problems. For a temporary fix, I decided to turn off the screen without putting the computer to sleep. You will miss out on battery duration, but it works well enough until I find a fix.
 
 ##### 4. Occasionally the touchscreen and pen input will stop working altogether.
-This is quite a weird issue and it takes a complete reboot afaik to fix it. Logs from journal return this:
+This is quite a weird issue and it takes a complete reboot afaik to fix it. Logs from journald return this:
 
 ```
 wacom xxxx:xxxx:xxxx.xxxx: wacom_idleprox_timeout: tool appears to be hung in-prox. forcing it out.
-```
-
-A temporary fix I found is a scripts that restart the wacom module (USE AT YOUR OWN RISK, ALWAYS CHECK CODE THAT IS BEING EXECUTED ON YOUR MACHINE). I then created an alias in .bash.rc to have it as a quick command I can run on the go:
-
-```
-alias rewacom = 'bash ~/.scripts_wacom_restart.sh'
 ```
 
 ##### 5. Sometimes (I haven't been able to recreate the conditions) when switching to another tty you will either a blank page or an error about a corruption in the filesystem
@@ -59,6 +53,9 @@ Since speakers are not my priority, This is the last issue I'll try fixing, just
 ## Other tweaks
 ##### 1. Better battery with TLP and other utilities
 I included in the repo my TLP config file. Thanks to some tweaks (disabling clock boost with battery, changing governor) I got a battery life very similar (if not superior) to the one I was getting on windows 11, with some added benefits such as a quieter fans and colder temperatures. Moreover, I decided to set the refresh rate to 60 Hz instead of 90, this should improve battery life even more.
+
+##### 2.Disable backspace beep
+The laptop will put out a very loud and annoying beep when trying to using backspace on empty text boxes. Follow this guide on the official arch wiki to disable the motherboard speaker: https://wiki.archlinux.org/title/PC_speaker#Globally
 
 ## General utilities for the laptop:
 ##### 1. Xournalpp
