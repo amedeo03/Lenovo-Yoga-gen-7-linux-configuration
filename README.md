@@ -1,3 +1,6 @@
+# !CURRENTLY DISCONTINUED!
+instead check [this repo](https://github.com/tomsom/yoga-linux). It contains more in depth explanations, covers a wider variety of topics and it is more active. My repo will be kept online at least for now since it has a couple of useful info for future troubleshooting, but every other guide might not be useful anymore as linux's software will evolve.
+
 # Yoga 7 gen 7 linux configuration and trouble shooting
 
 Hello everyone, I bought this laptop to use it during my university studies: it has nice specs, long battery life and I can take notes with the stylus. As soon as I got it, I started thinkering with linux, installing Arch since it's usually my go-to distro.
